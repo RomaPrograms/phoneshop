@@ -2,13 +2,13 @@ package com.es.core;
 
 import com.es.core.model.phone.Phone;
 import com.es.core.model.phone.PhoneDao;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -20,11 +20,12 @@ public class JdbcPhoneDaoTest {
 
     @Test
     public void testGet() {
+        System.out.println("dfghjk");
         Optional<Phone> phone = jdbcPhoneDao.get(1000L);
-
-        if(phone.isPresent()) {
-            System.out.println();
-        }
+//
+//        if(phone.isPresent()) {
+//            System.out.println();
+//        }
     }
 
 //    @Test
@@ -41,6 +42,7 @@ public class JdbcPhoneDaoTest {
 
     @Test
     public void testGetAll() {
-
+        List<Phone> list = jdbcPhoneDao.findAll(1, 1);
+        System.out.println("Hello");
     }
 }
